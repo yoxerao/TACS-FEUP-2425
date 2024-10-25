@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="UIModel" nsURI="http://www.example.org/usagecentereddesign"
+    nsPrefix="ucd">
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractComponent" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractTool" eSuperTypes="#//AbstractComponent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//AbstractToolEnum"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractMaterial" eSuperTypes="#//AbstractComponent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//AbstractMatEnum"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActiveMaterial" eSuperTypes="#//AbstractComponent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ActiveMatEnum"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AbstractMatEnum">
+    <eLiterals name="Container" literal="Container"/>
+    <eLiterals name="Element" value="1" literal="Element"/>
+    <eLiterals name="Collection" value="2" literal="Collection"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ActiveMatEnum">
+    <eLiterals name="Input" literal="Input"/>
+    <eLiterals name="EditableElement" value="1" literal="EditableElement"/>
+    <eLiterals name="SelectableCollection" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AbstractToolEnum">
+    <eLiterals name="Select" literal="Select"/>
+    <eLiterals name="Click" value="1" literal="Click"/>
+    <eLiterals name="Create" value="2" literal="Create"/>
+    <eLiterals name="Delete" value="3" literal="Delete"/>
+    <eLiterals name="Modify" value="4" literal="Modify"/>
+  </eClassifiers>
+</ecore:EPackage>
